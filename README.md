@@ -22,7 +22,7 @@ A robust API testing framework built with TypeScript, Mocha, and Supertest.
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/hiroksarker/api-testing-framework.git
 cd api-testing-framework
 ```
 
