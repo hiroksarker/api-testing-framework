@@ -45,7 +45,25 @@ describe('User API', () => {
   it('should update an existing user', async () => {
     const updatedData = {
       name: 'Updated Name',
-      email: 'updated@example.com'
+      email: 'updated@example.com',
+      username: 'updatedusername',
+      address: {
+        street: 'Updated Street',
+        suite: 'Apt 123',
+        city: 'Updated City',
+        zipcode: '12345',
+        geo: {
+          lat: '40.7128',
+          lng: '-74.0060'
+        }
+      },
+      phone: '1-234-567-8900',
+      website: 'www.updated.com',
+      company: {
+        name: 'Updated Company',
+        catchPhrase: 'Updated Catch Phrase',
+        bs: 'Updated BS'
+      }
     };
     
     const response = await updateUser(1, updatedData);
@@ -54,6 +72,11 @@ describe('User API', () => {
     expect(response.status).to.equal(200);
     expect(user.name).to.equal(updatedData.name);
     expect(user.email).to.equal(updatedData.email);
+    expect(user.username).to.equal(updatedData.username);
+    expect(user.address.street).to.equal(updatedData.address.street);
+    expect(user.phone).to.equal(updatedData.phone);
+    expect(user.website).to.equal(updatedData.website);
+    expect(user.company.name).to.equal(updatedData.company.name);
     expect(user.id).to.equal(1);
   });
 
