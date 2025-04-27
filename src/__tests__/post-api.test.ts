@@ -50,6 +50,7 @@ describe('Post API', () => {
 
   it('should update an existing post', async () => {
     const updatedData = {
+      userId: 1,
       title: 'Updated Title',
       body: 'This is the updated body content.'
     };
