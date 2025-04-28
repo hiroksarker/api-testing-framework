@@ -4,7 +4,7 @@
     "description": "A robust API testing framework with TypeScript, Mocha and Supertest",
     "main": "index.js",
     "scripts": {
-      "test": "mocha --require ts-node/register 'src/**/*.test.ts'",
+      "test": "mocha --require ts-node/register --reporter mochawesome --reporter-options reportDir=reports,reportFilename=report,quiet=true 'src/**/*.test.ts'",
       "test:watch": "mocha --require ts-node/register --watch --watch-files src/ 'src/**/*.test.ts'"
     },
     "keywords": [
